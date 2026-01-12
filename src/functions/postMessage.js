@@ -11,14 +11,14 @@ app.http('postMessage', {
             const { name, message } = body;
 
             if (!name || !message) {
-                return { status: 400, body: 'Name and message are required' };
+                return { status: 400, body: '이름과 메시지가 필요합니다.' };
             }
 
             store.addMessage({ name, message });
-            return { status: 201, body: 'Message added' };
+            return { status: 201, body: '메시지가 추가되었습니다.' };
         } catch (error) {
             context.error(error);
-            return { status: 400, body: 'Invalid JSON' };
+            return { status: 400, body: '유효하지 않은 JSON' };
         }
     }
 });
